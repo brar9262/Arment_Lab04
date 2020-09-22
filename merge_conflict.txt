@@ -1,0 +1,112 @@
+jovyan@jupyter-brar9262:~/CSPB_3308/Lab04$ git pull lab4 master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/brar9262/Arment_Lab04
+ * branch            master     -> FETCH_HEAD
+   bd7b654..bfec45e  master     -> lab4/master
+Auto-merging README
+CONFLICT (content): Merge conflict in README
+Automatic merge failed; fix conflicts and then commit the result.
+jovyan@jupyter-brar9262:~/CSPB_3308/Lab04$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   README
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .ipynb_checkpoints/
+        merge_conflict.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+jovyan@jupyter-brar9262:~/CSPB_3308/Lab04$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+tortoisemerge emerge vimdiff
+Merging:
+README
+
+Normal merge conflict for 'README':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff): 
+4 files to edit
+jovyan@jupyter-brar9262:~/CSPB_3308/Lab04$ vi README
+jovyan@jupyter-brar9262:~/CSPB_3308/Lab04$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+
+        modified:   README
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .ipynb_checkpoints/
+        README.orig
+        merge_conflict.txt
+
+jovyan@jupyter-brar9262:~/CSPB_3308/Lab04$ git commit
+[master 7baab78] Merge branch 'master' of https://github.com/brar9262/Arment_Lab04
+jovyan@jupyter-brar9262:~/CSPB_3308/Lab04$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .ipynb_checkpoints/
+        README.orig
+        merge_conflict.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+jovyan@jupyter-brar9262:~/CSPB_3308/Lab04$ git log
+commit 7baab786cd81eed923d58c4784d29aa945eb7a07 (HEAD -> master)
+Merge: 47621f7 bfec45e
+Author: brar9262 <bryan.arment@gmail.com>
+Date:   Tue Sep 22 02:37:22 2020 +0000
+
+    Merge branch 'master' of https://github.com/brar9262/Arment_Lab04
+
+commit 47621f70f72a7ed58677a0d497968a53d0574a5f
+Author: brar9262 <bryan.arment@gmail.com>
+Date:   Tue Sep 22 02:24:12 2020 +0000
+
+    step 24 commit
+
+commit bfec45ee3ee8151bb46646b5a638d650b746501d (lab4/master)
+Author: bmeares1331 <71229863+bmeares1331@users.noreply.github.com>
+Date:   Mon Sep 21 20:14:22 2020 -0600
+
+    Update README
+
+commit bd7b654c070a528032ca779ab025a87eb434f02e
+Merge: 2656bd0 9602904
+Author: brar9262 <bryan.arment@gmail.com>
+Date:   Tue Sep 22 01:50:17 2020 +0000
+
+    Merge branch 'testing-new-files'
+    merging per step 12 in lab test into master
+
+commit 2656bd0b437cc54d69c3264d0f70a8cdb1c25616
+Author: brar9262 <bryan.arment@gmail.com>
+Date:   Tue Sep 22 01:46:12 2020 +0000
+
+    committing edit fileOne per step 11
+
+commit 9602904ccccf94d8505c893d40f6d9175e6bf4a6 (lab4/testing-new-files, testing-new-files)
+Author: brar9262 <bryan.arment@gmail.com>
+Date:   Tue Sep 22 01:21:52 2020 +0000
+
+:
